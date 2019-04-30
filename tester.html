@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Underscore.JS</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+	var ironman = {
+		 name: "Tony Stark",
+		 alias: "Iron Man"
+		};
+		var avengers_array = [
+		 {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+		 {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+		 {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+		 {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+		 {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+		 {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+		];
+
+	// .each()
+	// function that can iterate over objects or arrays and even do some manipulation
+	_.each(ironman, function(value, key){ alert(key+': '+value); });
+
+	// .map()
+	var avengersAssemble = _.map(avengers_array, function(avenger){ return avenger; });
+
+	// .pluck()
+	// Returns or “plucks” only the values for the key specified as the second argument and places them in an array
+	var avengerNames = _.pluck(avengers_array, 'name');
+
+	// .where()
+	var superhumanStrengthAvengersArray = _.where(avengers_array, {ability: "superhuman strength"});
+
+	// .findWhere()
+	var superhumanStrengthAvenger = _.findWhere(avengers_array, {ability: "superhuman strength"});
+
+	// .filter()
+	var superhumanStrengthAvengers = _.filter(avengers_array, function(avenger){ return avenger.ability == "superhuman strength"; });
+
+	// .sortBy()
+	var sortedAvengerNames = _.sortBy(avengers_array, 'name');
+
+
+	var artists = ['Pharrel Williams', 'Led Zeppelin', 'Rolling Stones'];
+
+	_.each(artists, function(artist, index, artists) {
+	  console.log('artist: ' + artist);
+	});
+	</script>
+</head>
+<body>
+	<h1 id="h1">Hello World!</h1>
+	<h2>bye</h2>
+
+	<script>
+		var ironman = {
+		 name: "Tony Stark",
+		 alias: "Iron Man"
+		};
+
+		var avengers_array = [
+			 {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+			 {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+			 {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+			 {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+			 {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+			 {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+			];
+
+		document.getElementById("h1").innerHTML = ironman.name;
+	</script>
+</body>
+</html>
